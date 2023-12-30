@@ -1,0 +1,26 @@
+:root{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 0;
+    margin: 50px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.pixel{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+}
+
