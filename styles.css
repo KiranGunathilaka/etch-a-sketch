@@ -6,6 +6,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1{
+    font-size: 45px;
+}
+
+body{
+    background-color: #eee;
+}
+
 .all-container {
     width: 100%;
     display: flex;
@@ -17,6 +25,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: white;
 }
 
 .buttons-and-grid-container {
@@ -55,7 +67,7 @@
     justify-content: center;
     align-content: center;
     gap: 0;
-    border: 1px solid black;
+    box-shadow: 3px 3px 5px 2px #ccc;
 }
 
 .pixel {
@@ -64,7 +76,6 @@
     background-color: white;
 }
 
-/*grid*/
 
 /*toggle button*/
 .toggle-button{
@@ -74,13 +85,12 @@
 
 #toggleButton {
     display: none;
-    /* Hide the actual checkbox */
 }
 
 .toggle-label {
     display: block;
-    width: 35px;
-    height: 21px;
+    width: 43px;
+    height: 25px;
     background-color: #ccc;
     border-radius: 15px;
     position: relative;
@@ -94,21 +104,21 @@
 .toggle-label::before {
     content: '';
     position: absolute;
-    width: 17px;
-    height: 17px;
+    width: 19px;
+    height: 19px;
     background-color: white;
     border-radius: 50%;
-    top: 2px;
-    left: 2px;
+    top: 3px;
+    left: 3px;
     transition: 0.3s;
 }
 
 #toggleButton:checked+.toggle-label::before {
-    transform: translateX(14px);
+    transform: translateX(17px);
 }
 
-/*end of toggle button*/
 
+/* buttons */
 .button {
     width: 170px;
     padding: 10px 20px;
@@ -134,7 +144,7 @@
     transform: scale(0.95);
   }
 
-
+/* color picker */
  .color-picker {
     width: 50px;
     height: 50px;
