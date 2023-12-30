@@ -7,18 +7,27 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <h1>Etch a Sketch</h1>
-    <div class="grid-size container">
-        <label>16 x 16</label>
-        <input id="pixel-selector" name="range" type="range" value="16" min="1" max="100">
-    </div>
-    <div class="buttons-and-grid container">
-        <input class="color-picker" type="color" value="#000">
-        <button class="button one-color-button">Mono Color</button>
-        <input type="checkbox" id="toggleButton">
-        <label for="toggleButton" class="toggle-label"></label>
-        <button class="button random-color-button">Random Color</button>
-        <div class="grid-container"></div>
+    <div class="all-container">
+        <h1>ETCH A SKETCH</h1>
+        <div class="grid-size-options-container">
+            <label>16 x 16</label>
+            <input id="pixel-selector" name="range" type="range" value="16" min="1" max="100">
+        </div>
+        <div class="buttons-and-grid-container">
+            <div class="buttons-container">
+                <div class="monocolor-container">
+                    <input class="color-picker" type="color" value="#000">
+                    <button class="button one-color-button">Mono Color</button>
+                    <div class="toggle-button">
+                        <label id="darkening-label">Progressive darkening</label>
+                        <input type="checkbox" id="toggleButton">
+                        <label for="toggleButton" class="toggle-label"></label>
+                    </div>
+                </div>
+                <button class="button random-color-button">Random Color</button>
+            </div>
+            <div class="grid-container"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

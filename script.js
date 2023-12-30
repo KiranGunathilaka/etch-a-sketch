@@ -1,4 +1,5 @@
 const gridContainer = document.querySelector(".grid-container");
+const buttons = document.querySelectorAll(".button");
 
 let isMouseDown = false;
 let currentPixel;
@@ -8,8 +9,8 @@ function colorChanger(e) {
     currentPixel.style.backgroundColor = "black";
 }
 
-for (let i=0; i<1600 ; i++){
-    const  pixel = document.createElement("div");
+for (let i = 0; i < 1600; i++) {
+    const pixel = document.createElement("div");
     pixel.classList.add("pixel")
     gridContainer.appendChild(pixel);
 }
@@ -20,12 +21,20 @@ gridContainer.addEventListener("mousedown", (e) => {
 })
 
 gridContainer.addEventListener("mousemove", (e) => {
-    if(isMouseDown){
+    if (isMouseDown) {
         colorChanger(e);
     }
 })
 
-gridContainer.addEventListener("mouseup", (e) =>{
+gridContainer.addEventListener("mouseup", (e) => {
     isMouseDown = false;
     colorChanger(e);
 })
+
+
+buttons.forEach((button) => {
+    button.addEventListener('click', function () {
+        this.classList.toggle('clicked');
+    })
+}
+);
