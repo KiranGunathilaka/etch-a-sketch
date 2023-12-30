@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.container{
+.grid-container{
     width: 400px;
     height: 400px;
     display: flex;
@@ -23,4 +23,38 @@
     height: 10px;
     background-color: white;
 }
+
+#toggleButton {
+    display: none; /* Hide the actual checkbox */
+  }
+  
+  .toggle-label {
+    display: block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  #toggleButton:checked + .toggle-label {
+    background-color: #4CAF50;
+  }
+  
+  .toggle-label::before {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+  }
+  
+  #toggleButton:checked + .toggle-label::before {
+    transform: translateX(18px);
+  }
 

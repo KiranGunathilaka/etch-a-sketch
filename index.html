@@ -7,7 +7,19 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <div class="container"></div>
+    <h1>Etch a Sketch</h1>
+    <div class="grid-size container">
+        <label>16 x 16</label>
+        <input id="pixel-selector" name="range" type="range" value="16" min="1" max="100">
+    </div>
+    <div class="buttons-and-grid container">
+        <input class="color-picker" type="color" value="#000">
+        <button class="button one-color-button">Mono Color</button>
+        <input type="checkbox" id="toggleButton">
+        <label for="toggleButton" class="toggle-label"></label>
+        <button class="button random-color-button">Random Color</button>
+        <div class="grid-container"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
