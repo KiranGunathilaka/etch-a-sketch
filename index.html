@@ -10,14 +10,15 @@
     <div class="all-container">
         <h1>ETCH a sketch</h1>
         <div class="grid-size-options-container">
-            <label>Grid size : <span>16 x 16</span></label>
+            <label>Grid size : <span id="grid-size-span">16 x 16</span></label>
             <input id="pixel-selector" name="range" type="range" value="16" min="1" max="100">
         </div>
         <div class="buttons-and-grid-container">
+            <div class="grid-container"></div>
             <div class="buttons-container">
                 <div class="monocolor-container">
                     <input class="color-picker" type="color" value="#000">
-                    <button class="button one-color-button">Mono Color</button>
+                    <button class="button mono-color-button">Mono Color</button>
                     <div class="toggle-button">
                         <label id="darkening-label">Progressive darkening</label>
                         <input type="checkbox" id="toggleButton">
@@ -26,7 +27,6 @@
                 </div>
                 <button class="button random-color-button">Random Color</button>
             </div>
-            <div class="grid-container"></div>
         </div>
     </div>
     <script src="script.js"></script>

@@ -1,5 +1,10 @@
 const gridContainer = document.querySelector(".grid-container");
-const buttons = document.querySelectorAll(".button");
+const monoColorButton = document.querySelector(".mono-color-button");
+const randomColorButton = document.querySelector(".random-color-button");
+const colorPicker = document.querySelector(".color-picker");
+const toggleButton = document.querySelector("#toggleButton");
+const gridSizeSpan = document.querySelector("#grid-size-span");
+const sizeSelector = document.querySelector("#pixel-selector");
 
 let isMouseDown = false;
 let currentPixel;
