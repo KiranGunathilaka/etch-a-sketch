@@ -11,6 +11,10 @@ let gridSize = 40;
 let currentPixel;
 let color = colorPicker.value;
 let isRandom = false;
+let isProDarkSelected = false;
+let currentPixelStyle;
+let currentOpacity;
+let tempTarget;
 
 function colorChanger(e) {
     currentPixel = e.target;
@@ -18,6 +22,15 @@ function colorChanger(e) {
         currentPixel.style.backgroundColor = randomColorGenerator();
     } else {
         currentPixel.style.backgroundColor = color;
+        if (isProDarkSelected){
+            currentOpacity = currentPixel.style.opacity;
+            if (currentOpacity == 1){
+                currentPixel.style.opacity = 0.1;
+            } else{
+                currentPixel.style.opacity = 0.1 + +currentOpacity;
+            }
+            
+        }
     }
 }
 
@@ -76,18 +89,19 @@ colorPicker.addEventListener("input", () => {
 //making the mouse events trigger the coloring of the grid pixels
 gridContainer.addEventListener("mousedown", (e) => {
     isMouseDown = true;
+    tempTarget = e.target;
     colorChanger(e);
 })
 
 gridContainer.addEventListener("mousemove", (e) => {
-    if (isMouseDown) {
+    if (isMouseDown && tempTarget != e.target) {
         colorChanger(e);
+        tempTarget = e.target;
     }
 })
 
 gridContainer.addEventListener("mouseup", (e) => {
     isMouseDown = false;
-    colorChanger(e);
 })
 
 
@@ -119,16 +133,7 @@ randomColorButton.addEventListener("click", () => {
     }
 })
 
-
-// gridContainer.addEventListener("mouseleave", ()=>{
-//     document.addEventListener("mouseup", mouseDownFalser());
-//     document.removeEventListener("mouseup", mouseDownFalser());
-// })
-
-
-// buttons.forEach((button) => {
-//     button.addEventListener('click', function () {
-//         this.classList.toggle('clicked');
-//     })
-// }
-// );
+toggleButton.addEventListener("change", () =>{
+    isProDarkSelected = isProDarkSelected? false: true;
+    console.log(isProDarkSelected)
+})
