@@ -40,10 +40,6 @@ function gridChildRemover() {
     }
 }
 
-// function mouseDownFalser(){
-//     isMouseDown = false;
-// }
-
 function randomColorGenerator() {
     let r = Math.ceil(Math.random() * 255);
     let g = Math.ceil(Math.random() * 255);
@@ -97,22 +93,29 @@ gridContainer.addEventListener("mouseup", (e) => {
 
 //changing the button states
 monoColorButton.addEventListener("click", () => {
-    monoColorButton.classList.toggle("clicked");
-    isRandom = false;
-    colorPicker.disabled = false;
     if (randomColorButton.classList.contains("clicked")) {
         randomColorButton.classList.toggle("clicked");
+    }
+
+    if (!monoColorButton.classList.contains("clicked")){
+        monoColorButton.classList.toggle("clicked");
+        isRandom = false;
+        colorPicker.disabled = false;
+        colorPicker.style.cursor = "pointer";
     }
 
 })
 
 randomColorButton.addEventListener("click", () => {
-    randomColorButton.classList.toggle("clicked");
-    isRandom = true;
-    colorPicker.disabled = true;
-    colorPicker.style.cursor = "not-allowed";
     if (monoColorButton.classList.contains("clicked")) {
         monoColorButton.classList.toggle("clicked");
+    }
+
+    if(!randomColorButton.classList.contains("clicked")){
+        randomColorButton.classList.toggle("clicked");
+        isRandom = true;
+        colorPicker.disabled = true;
+        colorPicker.style.cursor = "not-allowed";
     }
 })
 
